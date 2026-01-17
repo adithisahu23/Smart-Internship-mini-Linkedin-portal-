@@ -1,0 +1,9 @@
+const mongoose = require("mongoose");
+
+const applicationSchema = new mongoose.Schema({
+  jobId: { type: mongoose.Schema.Types.ObjectId, ref: "Job" },
+  studentId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  status: { type: String, default: "Applied" }
+});
+
+module.exports = mongoose.model("Application", applicationSchema);
